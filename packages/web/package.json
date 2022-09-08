@@ -1,0 +1,16 @@
+{
+  "name": "earthorigin-web",
+  "license": "GPL-3.0-or-later",
+  "version": "0.1.0",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "dependencies": {
+    "debug": "^4.3.4"
+  },
+  "scripts": {
+    "test:dependencies": "yarn depcheck --ignores=depcheck,typescript"
+  },
+  "engines": {
+    "node": "16.14"
+  }
+}
