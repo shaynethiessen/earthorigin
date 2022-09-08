@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "depcheck": "^1.4.3"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "test:dependencies:server": "yarn --cwd packages/server/ test:dependencies",
+    "test:dependencies:types": "yarn --cwd packages/types/ test:dependencies",
+    "test:dependencies:web": "yarn --cwd packages/web/ test:dependencies",
+  },
+  "engines": {
+    "node": "16.14"
+  }
+}
