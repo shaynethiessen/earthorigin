@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "dependencies": {
+    "@types/debug": "^4.1.7"
+  },
   "devDependencies": {
     "depcheck": "^1.4.3"
   },
@@ -27,7 +30,7 @@
   "scripts": {
     "test:dependencies:server": "yarn --cwd packages/server/ test:dependencies",
     "test:dependencies:types": "yarn --cwd packages/types/ test:dependencies",
-    "test:dependencies:web": "yarn --cwd packages/web/ test:dependencies",
+    "test:dependencies:web": "yarn --cwd packages/web/ test:dependencies"
   },
   "engines": {
     "node": "16.14"
