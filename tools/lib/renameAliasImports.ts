@@ -1,7 +1,7 @@
 import findup from 'find-up';
-import fs from 'fs';
+import {readFileSync} from 'fs';
 import type {Collection, JSCodeshift, FileInfo} from 'jscodeshift';
-import path from 'path';
+import {dirname, resolve, join, relative} from 'path';
 
 interface Alias {
     alias: string;
@@ -16,13 +16,13 @@ interface Alias {
  */
 function getAliases(pth: string): Alias[] | null {
     // Read and parse the tsconfig file
-    const cwd = path.resolve(path.dirname(pth));
+    const cwd = resolve(dirname(pth));
     const tsconfigPath = findup.sync('tsconfig.json', {cwd});
     if (!tsconfigPath) {
         console.log(`[WARNING] Couldn't find tsconfig.json: ${pth}`);
         return null;
     }
-    const tsconfigRaw = fs.readFileSync(tsconfigPath, {encoding: 'utf-8'});
+    const tsconfigRaw = readFileSync(tsconfigPath, {encoding: 'utf-8'});
     const tsconfig = JSON.parse(tsconfigRaw);
 
     // Check for tsconfig options
@@ -35,8 +35,8 @@ function getAliases(pth: string): Alias[] | null {
         return {
             alias: alias.replace(/\/\*$/, ''),
             path: tsconfig.compilerOptions.paths[alias][0].replace(/\/\*$/, ''),
-            base: path.dirname(tsconfigPath),
-            fullPath: path.join(path.dirname(tsconfigPath), tsconfig.compilerOptions.paths[alias][0].replace(/\/\*$/, '')),
+            base: dirname(tsconfigPath),
+            fullPath: join(dirname(tsconfigPath), tsconfig.compilerOptions.paths[alias][0].replace(/\/\*$/, '')),
         };
     });
 }
@@ -50,9 +50,9 @@ function replacePathAlias(aliases: Alias[], pth: string) {
     const ret = aliases.reduce((memo, alias) => {
         if (memo !== '') return memo;
         if (pth.includes(alias.fullPath)) {
-            const relativePath = path.relative(alias.fullPath, pth);
+            const relativePath = relative(alias.fullPath, pth);
             // console.log(relativePath, alias.alias);
-            return path.join(alias.alias, relativePath);
+            return join(alias.alias, relativePath);
         }
         return '';
     }, '');
@@ -80,14 +80,14 @@ export function renameAliasImports(root: Collection, j: JSCodeshift, fileInfo: F
     // Find import declarations that match aliased paths
     const imps = root.find(j.ImportDeclaration, node => {
         if (/^[^.]/.test(node.source.value)) return null;
-        const importPath = path.join(path.dirname(fileInfo.path), node.source.value);
-        if (!isAliasedPath(aliases, path.join(process.cwd(), importPath))) return null;
+        const importPath = join(dirname(fileInfo.path), node.source.value);
+        if (!isAliasedPath(aliases, join(process.cwd(), importPath))) return null;
         return node;
     });
 
     // Replace the import paths with aliases
     imps.forEach(p => {
-        const importPath = path.join(path.dirname(fileInfo.path), p.value.source.value as string);
+        const importPath = join(dirname(fileInfo.path), p.value.source.value as string);
         p.value.source.value = replacePathAlias(aliases, importPath);
     });
 

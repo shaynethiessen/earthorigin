@@ -1,5 +1,5 @@
 import type {Collection, FileInfo, JSCodeshift} from 'jscodeshift';
-import path from 'path';
+import {parse, sep} from 'path';
 
 function replaceDebugNamespace(namespace: string, root: Collection) {
     root.findVariableDeclarators('d').forEach(v => {
@@ -17,10 +17,10 @@ export function fixDebugNamespace(root: Collection, j: JSCodeshift, fileInfo: Fi
     const pathMatched = /packages\/(.+)\/src\/(.*)/.exec(fileInfo.path);
     if (pathMatched === null) return null;
     const pkgName = pathMatched[1];
-    const parsed = path.parse(pathMatched[2]);
+    const parsed = parse(pathMatched[2]);
 
     // Build the debug namespace string
-    const nameArr = ["terrene", pkgName, ...parsed.dir.split(path.sep), parsed.name === 'index' ? null : parsed.name];
+    const nameArr = ["earthorigin", pkgName, ...parsed.dir.split(sep), parsed.name === 'index' ? null : parsed.name];
     const name = nameArr
         .filter((v, index) => {
             if (index !== 0 && nameArr[index - 1] === v) {

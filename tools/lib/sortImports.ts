@@ -37,12 +37,6 @@ export function sortImports(root: Collection, j: JSCodeshift) {
         throw new Error("Import doesn't import from StringLiteral");
     });
 
-    // Trying to move eslint-disable comments to the top.
-    // console.log(util.inspect(imps.paths(), true, 4, true));
-    // imps.nodes().forEach(v => {
-    // 	console.log(util.inspect(v.comments, true, 1, true));
-    // });
-
     const sortedImps = mappedImps
         .sort((a, b) => {
             const aScore = calcScore(a.name);
