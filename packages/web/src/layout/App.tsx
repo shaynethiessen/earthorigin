@@ -9,7 +9,7 @@ import {AppShell, MantineProvider} from '@mantine/core';
 const d = debug('earthorigin.web.layout.App');
 function App() {
 	return (
-		<MantineProvider withGlobalStyles withNormalizeCSS>
+		<MantineProvider theme={{colorScheme: 'dark', primaryColor: 'gray'}} withGlobalStyles withNormalizeCSS>
 			<BrowserRouter>
 				<ScrollToTop />
 				<AppShell

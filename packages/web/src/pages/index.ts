@@ -2,6 +2,7 @@ import type {FunctionComponent} from 'react';
 import {Error} from './Error';
 import {Home} from './Home';
 import type {TablerIcon} from '@tabler/icons';
+import {About} from './About';
 
 export type Page = {
 	name: string;
@@ -13,4 +14,4 @@ export type Page = {
 	Content: FunctionComponent;
 };
 
-export const pages: Page[] = [Home, Error];
+export const pages: Page[] = [Home, About, Error];
