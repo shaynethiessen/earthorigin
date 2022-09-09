@@ -1,5 +1,5 @@
 import debug from "debug";
 
-const d = debug('types/src/index');
+const d = debug('earthorigin.types');
 
 d('Start Types');

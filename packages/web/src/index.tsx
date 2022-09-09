@@ -1,5 +1,5 @@
 import debug from "debug";
 
-const d = debug('web/src/index');
+const d = debug('earthorigin.web');
 
 d('Start Web');
