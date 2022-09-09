@@ -3,7 +3,7 @@ import debug from 'debug';
 import type {UserEntityConstructor} from 'earthorigin-types';
 import {v4} from 'uuid';
 
-const d = debug('terrene.server.Entities.Member');
+const d = debug('earthorigin.server.Users.Entities.User');
 
 @Entity()
 export class User {

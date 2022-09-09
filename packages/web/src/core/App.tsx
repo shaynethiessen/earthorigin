@@ -2,7 +2,7 @@ import debug from 'debug';
 import type React from 'react';
 import {BrowserRouter, Routes} from 'react-router-dom';
 
-const d = debug('terrene.web.App');
+const d = debug('earthorigin.web.core.App');
 function App() {
 	return (
 		<BrowserRouter>
