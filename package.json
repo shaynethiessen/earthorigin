@@ -32,7 +32,6 @@
     ]
   },
   "devDependencies": {
-    "typescript": "^4.6.2",
     "@mikro-orm/cli": "^5.0.5",
     "@types/debug": "^4.1.7",
     "@types/node": "^18.7.16",
@@ -47,7 +46,8 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "jscodeshift": "^0.13.1",
     "prettier": "^2.5.1",
-    "sort-package-json": "^1.57.0"
+    "sort-package-json": "^1.57.0",
+    "typescript": "^4.6.2"
   },
   "engines": {
     "node": "16.15"
