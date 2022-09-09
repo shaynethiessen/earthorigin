@@ -3,3 +3,5 @@
 
 # Auto Generated
 /node_modules/
+/packages/**/node_modules/
+yarn-error.log
