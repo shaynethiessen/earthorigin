@@ -1,4 +1,4 @@
-import findup from 'find-up';
+import {sync} from 'find-up';
 import {readFileSync} from 'fs';
 import type {Collection, JSCodeshift, FileInfo} from 'jscodeshift';
 import {dirname, resolve, join, relative} from 'path';
@@ -17,7 +17,7 @@ interface Alias {
 function getAliases(pth: string): Alias[] | null {
     // Read and parse the tsconfig file
     const cwd = resolve(dirname(pth));
-    const tsconfigPath = findup.sync('tsconfig.json', {cwd});
+    const tsconfigPath = sync('tsconfig.json', {cwd});
     if (!tsconfigPath) {
         console.log(`[WARNING] Couldn't find tsconfig.json: ${pth}`);
         return null;

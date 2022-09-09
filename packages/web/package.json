@@ -1,14 +1,14 @@
 {
   "name": "earthorigin-web",
-  "license": "GPL-3.0-or-later",
   "version": "0.1.0",
+  "license": "GPL-3.0-or-later",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
-  "dependencies": {
-    "debug": "^4.3.4"
-  },
   "scripts": {
     "test:dependencies": "yarn depcheck --ignore-patterns=.eslintrc.js"
+  },
+  "dependencies": {
+    "debug": "^4.3.4"
   },
   "engines": {
     "node": "16.15"

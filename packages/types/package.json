@@ -1,18 +1,18 @@
 {
   "name": "earthorigin-types",
-  "license": "GPL-3.0-or-later",
   "version": "0.1.0",
+  "license": "GPL-3.0-or-later",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
-  "dependencies": {
-    "debug": "^4.3.4"
-  },
   "scripts": {
     "build": "tsc --build ./",
     "fix:lint": "eslint --cache --fix --ext ts,js,tsx src",
     "test:dependencies": "yarn depcheck --ignore-patterns=.eslintrc.js",
     "test:lint": "eslint --cache --ext ts,js,tsx src",
     "test:types": "yarn tsc"
+  },
+  "dependencies": {
+    "debug": "^4.3.4"
   },
   "engines": {
     "node": "16.15"
