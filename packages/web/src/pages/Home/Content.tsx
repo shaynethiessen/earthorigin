@@ -1,5 +1,6 @@
 import React from 'react';
+import {CurrentWeather} from './components/CurrentWeather';
 
 export function Content() {
-	return <>Earth Origin - 2022</>;
+	return <CurrentWeather />;
 }

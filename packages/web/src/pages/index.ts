@@ -1,15 +1,14 @@
 import type {FunctionComponent} from 'react';
-import type {SemanticICONS} from 'semantic-ui-react';
 import {Error} from './Error';
 import {Home} from './Home';
+import type {TablerIcon} from '@tabler/icons';
 
 export type Page = {
 	name: string;
 	route: string;
 	mainMenu?: {
 		order: number;
-		icon?: SemanticICONS;
-		position: 'left' | 'right';
+		icon?: TablerIcon;
 	};
 	Content: FunctionComponent;
 };
