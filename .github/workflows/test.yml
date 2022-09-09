@@ -42,9 +42,9 @@ jobs:
 #      - name: Test Lint - Server
 #        run: |
 #          yarn test:lint:server
-#      - name: Test Lint - Types
-#        run: |
-#          yarn test:lint:types
+      - name: Test Lint - Types
+        run: |
+          yarn test:lint:types
 #      - name: Test Lint - Web
 #        run: |
 #          yarn test:lint:web
@@ -52,9 +52,9 @@ jobs:
 #      - name: Test Types - Server
 #        run: |
 #          yarn test:types:server
-#      - name: Test Types - Types
-#        run: |
-#          yarn test:types:types
+      - name: Test Types - Types
+        run: |
+          yarn test:types:types
 #      - name: Test Types - Web
 #        run: |
 #          yarn test:types:web
