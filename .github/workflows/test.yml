@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Setup node
         uses: actions/setup-node@v2-beta
@@ -28,6 +30,18 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           yarn
+
+      # Organize
+      - name: Organize Code
+        shell: bash
+        run: |
+          yarn organize
+          git add .
+          git config user.name "EO Bot"
+          git config user.email eo-bot@earthorigin.org
+          git commit -m "Organized Code"
+          git push
+
       # Dependencies
       - name: Test Dependencies - Server
         run: |
@@ -38,6 +52,7 @@ jobs:
       - name: Test Dependencies - Web
         run: |
           yarn test:dependencies:web
+
       # Lint
 #      - name: Test Lint - Server
 #        run: |
@@ -48,6 +63,7 @@ jobs:
 #      - name: Test Lint - Web
 #        run: |
 #          yarn test:lint:web
+
       # Types
 #      - name: Test Types - Server
 #        run: |
