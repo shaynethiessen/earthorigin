@@ -1,3 +1,3 @@
-import {User} from "../Users";
+import {User} from '../Users';
 
 export const entities = [User];
