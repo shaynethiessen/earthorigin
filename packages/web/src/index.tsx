@@ -1,4 +1,4 @@
-import debug from "debug";
+import debug from 'debug';
 import type React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';

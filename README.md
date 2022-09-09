@@ -1,8 +1,19 @@
 # Earth Origin
 
+## Environment setup
+
+1. Clone repository
+2. Copy packages/server/env.default to packages/server/.env and update config.
+3. Navigate to project root directory
+4. Run `yarn`
+5. Run `yarn build:types`
+6. Run `yarn db:create`
+7. Run `yarn start:server`
+8. Run `yarn start:web`
+
 ## Available Scripts
 
-### `yarn start:server`
+`yarn start:server`
 
 Runs the server in the development mode on port 3001.
 

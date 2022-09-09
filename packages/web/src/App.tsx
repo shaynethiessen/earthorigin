@@ -8,8 +8,7 @@ function App() {
 		<BrowserRouter>
 			<div style={{height: 'calc(100% - 40px)'}}>
 				Earth Origin
-				<Routes>
-				</Routes>
+				<Routes></Routes>
 			</div>
 		</BrowserRouter>
 	);

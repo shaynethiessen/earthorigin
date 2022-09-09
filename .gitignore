@@ -5,3 +5,4 @@
 /node_modules/
 /packages/**/node_modules/
 yarn-error.log
+packages/web/.eslintcache
