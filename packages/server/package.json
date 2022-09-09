@@ -14,12 +14,17 @@
     "test:types": "yarn tsc"
   },
   "dependencies": {
+    "earthorigin-types": "file:../types",
     "@mikro-orm/core": "^5.1.1",
     "@mikro-orm/postgresql": "^5.1.1",
     "debug": "^4.3.4",
     "express": "^4.17.3",
     "ts-node": "^10.7.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^5.0.5"
   },
   "engines": {
     "node": ">=16"
