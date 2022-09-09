@@ -4,11 +4,11 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {
-    "@types/debug": "^4.1.7"
-  },
   "devDependencies": {
-    "depcheck": "^1.4.3"
+    "@types/debug": "^4.1.7",
+    "@types/node": "^18.7.16",
+    "depcheck": "^1.4.3",
+    "jscodeshift": "^0.13.1"
   },
   "babel": {
     "presets": [
@@ -28,11 +28,12 @@
     ]
   },
   "scripts": {
+    "organize": "node node_modules/jscodeshift/bin/jscodeshift.js packages  --extensions=tsx,ts --parser=tsx -t tools/organize.ts",
     "test:dependencies:server": "yarn --cwd packages/server/ test:dependencies",
     "test:dependencies:types": "yarn --cwd packages/types/ test:dependencies",
     "test:dependencies:web": "yarn --cwd packages/web/ test:dependencies"
   },
   "engines": {
-    "node": "16.14"
+    "node": "16.15"
   }
 }

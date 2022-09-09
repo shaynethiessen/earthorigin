@@ -1,5 +1,5 @@
 import debug from "debug";
 
-const d = debug('server/src/index');
+const d = debug('earthorigin.server');
 
 d('Start Server');
