@@ -1,8 +1,8 @@
-import debug from "debug";
-import {mikroOrmConfig} from "./core/mikro-orm.config";
 import {MikroORM} from "@mikro-orm/core";
 import cors from 'cors';
+import debug from "debug";
 import Express from 'express';
+import {mikroOrmConfig} from "./core/mikro-orm.config";
 
 const d = debug('earthorigin.server');
 
