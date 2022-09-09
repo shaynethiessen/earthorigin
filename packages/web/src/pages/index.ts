@@ -1,7 +1,7 @@
-import {Home} from './Home';
-import {Error} from './Error';
-import type {SemanticICONS} from 'semantic-ui-react';
 import type {FunctionComponent} from 'react';
+import type {SemanticICONS} from 'semantic-ui-react';
+import {Error} from './Error';
+import {Home} from './Home';
 
 export type Page = {
 	name: string;

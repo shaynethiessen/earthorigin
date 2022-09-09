@@ -1,11 +1,11 @@
 import debug from 'debug';
 import type React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {ScrollToTop} from './ScrollToTop';
 import {pages} from '../pages';
 import {MainMenu} from './MainMenu';
+import {ScrollToTop} from './ScrollToTop';
 
-const d = debug('earthorigin.web.core.App');
+const d = debug('earthorigin.web.layout.App');
 function App() {
 	return (
 		<BrowserRouter>
