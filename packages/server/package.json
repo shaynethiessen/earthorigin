@@ -8,7 +8,7 @@
     "debug": "^4.3.4"
   },
   "scripts": {
-    "test:dependencies": "yarn depcheck --ignores=depcheck,typescript --ignore-patterns=.eslintrc.js"
+    "test:dependencies": "yarn depcheck --ignore-patterns=.eslintrc.js"
   },
   "engines": {
     "node": "16.15"

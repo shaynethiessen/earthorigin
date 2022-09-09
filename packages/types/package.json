@@ -8,7 +8,11 @@
     "debug": "^4.3.4"
   },
   "scripts": {
-    "test:dependencies": "yarn depcheck --ignores=depcheck,typescript --ignore-patterns=.eslintrc.js"
+    "build": "tsc --build ./",
+    "fix:lint": "eslint --cache --fix --ext ts,js,tsx src",
+    "test:dependencies": "yarn depcheck --ignore-patterns=.eslintrc.js",
+    "test:lint": "eslint --cache --ext ts,js,tsx src",
+    "test:types": "yarn tsc"
   },
   "engines": {
     "node": "16.15"
