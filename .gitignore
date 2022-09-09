@@ -1,6 +1,9 @@
 # Development
 .idea
 
+# Configuration
+packages/**/.env
+
 # Auto Generated
 /node_modules/
 /packages/**/node_modules/
