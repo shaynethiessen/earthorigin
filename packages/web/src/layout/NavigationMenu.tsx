@@ -1,8 +1,8 @@
+import {Navbar, Button, Divider, Title, Text} from '@mantine/core';
+import {IconMapPin} from '@tabler/icons';
 import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import type {Page} from '../pages';
-import {Navbar, Button, Divider, Title, Text} from '@mantine/core';
-import {IconMapPin} from '@tabler/icons';
 
 interface Props {
 	pages: Page[];

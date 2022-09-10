@@ -1,8 +1,8 @@
+import type {TablerIcon} from '@tabler/icons';
 import type {FunctionComponent} from 'react';
+import {About} from './About';
 import {Error} from './Error';
 import {Home} from './Home';
-import type {TablerIcon} from '@tabler/icons';
-import {About} from './About';
 
 export type Page = {
 	name: string;

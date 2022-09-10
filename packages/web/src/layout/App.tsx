@@ -1,10 +1,10 @@
+import {AppShell, MantineProvider} from '@mantine/core';
 import debug from 'debug';
 import type React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {pages} from '../pages';
 import {NavigationMenu} from './NavigationMenu';
 import {ScrollToTop} from './ScrollToTop';
-import {AppShell, MantineProvider} from '@mantine/core';
 
 const d = debug('earthorigin.web.layout.App');
 function App() {
