@@ -5,12 +5,35 @@
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "scripts": {
-    "test:dependencies": "yarn depcheck --ignore-patterns=.eslintrc.js"
+    "build": "tsc --build ./",
+    "fix:lint": "eslint --cache --fix --ext ts,js,tsx src",
+    "orm": "mikro-orm",
+    "start": "nodemon src/index.ts",
+    "test:dependencies": "yarn depcheck --ignore-patterns=.eslintrc.js",
+    "test:lint": "eslint --cache --ext ts,js,tsx src",
+    "test:types": "yarn tsc"
   },
   "dependencies": {
-    "debug": "^4.3.4"
+    "@mikro-orm/core": "^5.1.1",
+    "@mikro-orm/postgresql": "^5.1.1",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.0",
+    "earthorigin-types": "file:../types",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^5.0.5"
   },
   "engines": {
-    "node": "16.15"
+    "node": ">=16"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./mikroorm.ts"
+    ]
   }
 }

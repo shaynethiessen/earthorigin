@@ -12,9 +12,10 @@
     "test:types": "yarn tsc"
   },
   "dependencies": {
+    "@mikro-orm/core": "^5.1.1",
     "debug": "^4.3.4"
   },
   "engines": {
-    "node": "16.15"
+    "node": ">=16"
   }
 }
