@@ -31,17 +31,6 @@ jobs:
         run: |
           yarn
 
-      # Organize
-      - name: Organize Code
-        shell: bash
-        run: |
-          yarn organize
-          git add .
-          git config user.name "EO Bot"
-          git config user.email eo-bot@earthorigin.org
-          git commit -m "Organized Code"
-          git push
-
       # Dependencies
       - name: Test Dependencies - Server
         run: |
@@ -74,3 +63,14 @@ jobs:
       - name: Test Types - Web
         run: |
           yarn test:types:web
+
+      # Organize
+      - name: Organize Code
+        shell: bash
+        run: |
+          yarn organize
+          git add .
+          git config user.name "EO Bot"
+          git config user.email eo-bot@earthorigin.org
+          git commit -m "Organized Code"
+          git push
