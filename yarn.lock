@@ -3601,6 +3601,7 @@ duplexer@^0.1.2:
 "earthorigin-types@file:packages/types":
   version "0.1.0"
   dependencies:
+    "@mikro-orm/core" "^5.1.1"
     debug "^4.3.4"
 
 ee-first@1.1.1:

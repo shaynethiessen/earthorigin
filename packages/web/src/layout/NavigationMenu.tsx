@@ -33,7 +33,7 @@ export function NavigationMenu(props: Props) {
 								styles={() => ({
 									root: {
 										borderRadius: 0,
-										opacity: pathname === page.route ? 0.5 : undefined,
+										opacity: pathname !== page.route ? 0.8 : 1,
 									},
 								})}
 							>
