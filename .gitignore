@@ -7,7 +7,6 @@ packages/**/.env
 # Auto Generated
 /node_modules/
 /packages/**/build/
-/packages/**/eslintcache
+/packages/**/.eslintcache
 /packages/**/node_modules/
 yarn-error.log
-packages/web/.eslintcache

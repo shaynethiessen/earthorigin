@@ -5,7 +5,7 @@ import {ActionTypeEnum} from 'earthorigin-types';
 import type {ActionCall} from 'earthorigin-types';
 import Express from 'express';
 import type {Request, Response} from 'express';
-import {actions} from "./core/actions";
+import {actions} from './core/actions';
 import {environment} from './core/environment';
 import {mikroOrmConfig} from './core/mikro-orm.config';
 
