@@ -9,7 +9,7 @@ import {ScrollToTop} from './ScrollToTop';
 const d = debug('earthorigin.web.layout.App');
 function App() {
 	return (
-		<MantineProvider theme={{colorScheme: 'dark', primaryColor: 'gray'}} withGlobalStyles withNormalizeCSS>
+		<MantineProvider theme={{colorScheme: 'light', primaryColor: 'gray'}} withGlobalStyles withNormalizeCSS>
 			<BrowserRouter>
 				<ScrollToTop />
 				<AppShell
