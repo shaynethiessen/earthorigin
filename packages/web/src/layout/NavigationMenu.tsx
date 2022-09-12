@@ -1,8 +1,7 @@
-import {Navbar, Button, Divider, Title, Text} from '@mantine/core';
-import {IconMapPin} from '@tabler/icons';
 import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import type {Page} from '../pages';
+import {Navbar, Button, Divider, Title} from '@mantine/core';
 
 interface Props {
 	pages: Page[];
@@ -42,11 +41,6 @@ export function NavigationMenu(props: Props) {
 						</Link>
 					);
 				})}
-			</Navbar.Section>
-			<Navbar.Section style={{paddingTop: '20px', paddingBottom: '20px'}}>
-				<Text align="center" size="sm">
-					<IconMapPin size="14" /> Unknown, Canada
-				</Text>
 			</Navbar.Section>
 		</Navbar>
 	);
