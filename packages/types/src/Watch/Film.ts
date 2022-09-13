@@ -11,3 +11,6 @@ export type FilmEntity = FilmEntityConstructor & {
 	id: string;
 	version: number;
 };
+
+export type FilmFindParams = {tags: string[]};
+export type FilmFindReturn = FilmEntity[];

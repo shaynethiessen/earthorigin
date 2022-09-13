@@ -1,3 +1,4 @@
+import {Film, Tag} from '../Watch';
 import {User} from '../Users';
 
-export const entities = [User];
+export const entities = [Film, Tag, User];

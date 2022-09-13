@@ -10,3 +10,6 @@ packages/**/.env
 /packages/**/.eslintcache
 /packages/**/node_modules/
 yarn-error.log
+
+# Storage
+/packages/server/assets/
